@@ -159,16 +159,15 @@ class App extends React.Component {
       error,
       highlight
     } = this.state
-
     let scene
-
+    const filteredPlayers = players.filter(x => x.active)
     if (screen === 'DASHBOARD') {
       scene = (
         <Dashboard
           key="Dashboard"
           schedule={schedule}
           matches={matches}
-          players={players}
+          players={filteredPlayers}
           network={network}
           matchplayed={this.matchplayed}
           newplayer={this.newplayer}
